@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-
+import List from 'antd/lib/list';
+import 'antd/lib/list/style/css'
 
 class NewsList extends Component {
 
@@ -30,16 +31,29 @@ class NewsList extends Component {
             .catch(e => console.log("error"))
     }
 
-    render() {
-        return (
-            <div>
+    /*
+    * <List>
                 {
                     this.state.list
                         .map((item, i) =>
                             <div key={i}>{item.desc}</div>
                         )
                 }
-            </div>
+            </List>
+    *
+    * */
+
+
+    render() {
+        return (
+
+            <List
+                header={<div>header</div>}
+                footer={<div>footer</div>}
+                bordered
+                dataSource={this.state.list}
+                renderItem={item=>(<List.Item>{item._id}</List.Item>)}
+            />
         )
     }
 
