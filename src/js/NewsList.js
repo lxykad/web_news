@@ -7,8 +7,8 @@ class NewsList extends Component {
         super();
         this.state = {
             name: 'default',
-            url: 'http://gank.io/api/data/Android/10/1',
-            content: []
+            url: 'http://gank.io/api/data/Android/20/1',
+            list: []
         }
 
     }
@@ -19,8 +19,13 @@ class NewsList extends Component {
     componentWillMount() {
         fetch(this.state.url)
             .then(response => response.json())
-            .then(data=>{
-                console.log(data)
+            .then(data => {
+
+                if (!data.error) {
+                    this.setState({
+                        list: data.results
+                    })
+                }
             })
             .catch(e => console.log("error"))
     }
@@ -28,7 +33,12 @@ class NewsList extends Component {
     render() {
         return (
             <div>
-                {}
+                {
+                    this.state.list
+                        .map((item, i) =>
+                            <div key={i}>{item.desc}</div>
+                        )
+                }
             </div>
         )
     }
