@@ -88,7 +88,7 @@ class Home extends Component {
                 </Content>
 
                 <Footer style={{textAlign: 'center'}}>
-                    footer
+
                 </Footer>
 
             </Layout>
