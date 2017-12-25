@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Layout, Menu, Pagination} from 'antd';
 import Android from './Android';
 import Ios from './Ios'
+import H5 from './H5'
 import 'antd/lib/menu/style/css'
 import 'antd/lib/layout/style/css'
 import '../css/pc.css'
@@ -13,7 +14,8 @@ class Home extends Component {
     constructor() {
         super();
         this.state = {
-            currentKey: '1'
+            currentKey: '1',
+            View: Android
         }
     }
 
@@ -30,21 +32,21 @@ class Home extends Component {
             case '1':
                 this.setState(
                     {
-                        currentKey: '1'
+                        View: Android
                     }
                 )
                 break
             case '2':
                 this.setState(
                     {
-                        currentKey: '2'
+                        View: Ios
                     }
                 )
                 break
             case '3':
                 this.setState(
                     {
-                        currentKey: '3'
+                        View: H5
                     }
                 )
                 break
@@ -77,12 +79,9 @@ class Home extends Component {
 
                     <div style={{background: '#fff', padding: 24, minHeight: 580}}>
 
-
                         {
-
-
+                            <this.state.View></this.state.View>
                         }
-
 
                     </div>
 

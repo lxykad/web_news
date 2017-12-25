@@ -4,6 +4,8 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import Home from './Home'
 import NewsList from './NewsList'
+import Android from './Android'
+import Ios from './Ios'
 
 /*
 * 程序入口页
@@ -15,6 +17,8 @@ class AppRouter extends Component{
                 <div>
                     <Route path="/" exact component = {Home}/>
                     <Route path="/list/" exact component = {NewsList}/>
+                    <Route path="/android/" exact component = {NewsList}/>
+                    <Route path="/ios/" exact component = {NewsList}/>
                 </div>
             </BrowserRouter>
         )
