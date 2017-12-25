@@ -1,0 +1,26 @@
+.layout{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 120px;
+    height: 31px;
+    background: rgba(255,255,255,.2);
+    margin: 16px 24px 16px 0;
+    line-height: 31px;
+    text-align: center;
+    padding-left: 20px;
+    color: azure;
+
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
