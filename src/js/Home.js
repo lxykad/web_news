@@ -3,6 +3,7 @@ import {Layout, Menu} from 'antd';
 import Android from './Android';
 import Ios from './Ios'
 import H5 from './H5'
+import MeiZi from './MeiZi'
 import 'antd/lib/menu/style/css'
 import 'antd/lib/layout/style/css'
 import '../css/pc.css'
@@ -50,6 +51,13 @@ class Home extends Component {
                     }
                 )
                 break
+            case '4':
+                this.setState(
+                    {
+                        View: MeiZi
+                    }
+                )
+                break
             default:
                 console.log('no case')
         }
@@ -71,6 +79,7 @@ class Home extends Component {
                         <Menu.Item key="1">android</Menu.Item>
                         <Menu.Item key="2">ios</Menu.Item>
                         <Menu.Item key="3">前端</Menu.Item>
+                        <Menu.Item key="4">美女</Menu.Item>
 
                     </Menu>
                 </Header>
