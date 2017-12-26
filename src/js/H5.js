@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import TimeUtil from '../utils/TimeUtil'
 import List from 'antd/lib/list';
 import 'antd/lib/list/style/css'
+import 'antd/lib/avatar/style/css'
 
 class H5 extends Component {
 
@@ -28,7 +30,13 @@ class H5 extends Component {
 
             <List
                 dataSource={this.state.list}
-                renderItem={item => (<List.Item onClick={this.handItemClick.bind(this, item)}>{item.desc}</List.Item>)}
+                renderItem={item => (
+                    <List.Item onClick={this.handItemClick.bind(this, item)}>
+                        <List.Item.Meta
+                            title={item.desc}
+                            description={TimeUtil.formartTime(new Date(item.publishedAt),'yyyy-MM-dd')}
+                        />
+                    </List.Item>)}
             />
         )
     }
