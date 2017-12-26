@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import List from 'antd/lib/list';
 import 'antd/lib/list/style/css'
 
@@ -14,6 +14,10 @@ class Ios extends Component {
 
     }
 
+    handItemClick(item) {
+        window.open(item.url)
+    }
+
     componentWillMount() {
         this.loadData()
         console.log('load ios data')
@@ -24,12 +28,12 @@ class Ios extends Component {
 
             <List
                 dataSource={this.state.list}
-                renderItem={item=>(<List.Item>{item.desc}</List.Item>)}
+                renderItem={item => (<List.Item onClick={this.handItemClick.bind(this, item)}>{item.desc}</List.Item>)}
             />
         )
     }
 
-    loadData(){
+    loadData() {
 
         fetch(this.state.url)
             .then(response => response.json())

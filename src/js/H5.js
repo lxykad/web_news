@@ -14,6 +14,10 @@ class H5 extends Component {
 
     }
 
+    handItemClick(item) {
+        window.open(item.url)
+    }
+
     componentWillMount() {
         this.loadData()
         console.log('load h5 data')
@@ -24,12 +28,12 @@ class H5 extends Component {
 
             <List
                 dataSource={this.state.list}
-                renderItem={item=>(<List.Item>{item.desc}</List.Item>)}
+                renderItem={item => (<List.Item onClick={this.handItemClick.bind(this, item)}>{item.desc}</List.Item>)}
             />
         )
     }
 
-    loadData(){
+    loadData() {
 
         fetch(this.state.url)
             .then(response => response.json())

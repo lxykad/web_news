@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Layout, Menu, Pagination} from 'antd';
+import {Layout, Menu} from 'antd';
 import Android from './Android';
 import Ios from './Ios'
 import H5 from './H5'
@@ -60,7 +60,7 @@ class Home extends Component {
 
             <Layout>
                 <Header className="header">
-                    <div className="logo">干货集中营</div>
+                    <div className="logo">小刘哥</div>
                     <Menu
                         theme="dark"
                         mode="horizontal"

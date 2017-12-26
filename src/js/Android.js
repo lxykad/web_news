@@ -14,6 +14,10 @@ class Android extends Component {
 
     }
 
+    handItemClick(item) {
+        window.open(item.url)
+    }
+
     /*
     * 一些启动动作 像网络请求等，放着这个生命周期里操作
     * */
@@ -26,12 +30,12 @@ class Android extends Component {
 
             <List
                 dataSource={this.state.list}
-                renderItem={item=>(<List.Item>{item.desc}</List.Item>)}
+                renderItem={item => (<List.Item onClick={this.handItemClick.bind(this,item)}>{item.desc}</List.Item>)}
             />
         )
     }
 
-    loadData(){
+    loadData() {
 
         fetch(this.state.url)
             .then(response => response.json())

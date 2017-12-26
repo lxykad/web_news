@@ -4,8 +4,6 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 import Home from './Home'
 import NewsList from './NewsList'
-import Android from './Android'
-import Ios from './Ios'
 
 /*
 * 程序入口页
