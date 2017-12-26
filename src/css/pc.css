@@ -24,3 +24,9 @@
     flex-direction: row;
     flex-wrap: nowrap;
 }
+
+.meizi{
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+}
